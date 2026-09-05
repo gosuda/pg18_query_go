@@ -1,0 +1,49 @@
+pg18_query_go
+Copyright (c) 2026 GoSuda
+
+This distribution includes material from the following projects. Their copyright
+notices, license conditions, and disclaimers remain applicable to that material.
+
+PostgreSQL 18.4 (REL_18_4)
+https://github.com/postgres/postgres/tree/REL_18_4
+Files: internal/neoparse/pg18; testdata/postgresql-18.4; grammar-derived logic.
+License: LICENSE.POSTGRESQL and testdata/postgresql-18.4/COPYRIGHT.
+Source archive SHA-256:
+9b4f86dd2ac00b914582e9893d1bad1f54bc9be7108fa794318b8184f921ec08
+
+pg_query_go / libpg_query
+https://github.com/pganalyze/pg_query_go
+Reference commit: e6a9b9881a8b6cf1414cbd32dcffa2f627ec1767.
+libpg_query reference commit:
+bbfab3948719782cc4ce48dbf2485f8ed0519089.
+Official C fixtures (including deparse_tests.c and fingerprint_opts_tests.c)
+are sourced from that commit, not from a moving branch.
+Files: internal/pgproto, makefuncs.go, upstream_*_test.go,
+testdata/fingerprint.json; testdata/libpg_query_deparse.json.gz;
+testdata/postgresql-18.4.json.gz; source-derived deparse, fingerprint,
+normalization, summary, and PL/pgSQL behavior.
+Licenses: licenses/PG_QUERY_GO, licenses/LIBPG_QUERY, licenses/POSTGRESQL.
+The reference project is not a Go module dependency of this distribution.
+The PL/pgSQL oracle applies a two-case serializer correction for promise
+variables. Original malformed upstream JSON is retained in fixture records
+under pl_json_upstream; the native API returns valid JSON.
+
+gFire Projects Groups
+Files: native Ragel/goyacc SQL parser and generator integration.
+See licenses/GFIRE for the original copyright notice and BSD-3-Clause license.
+
+Vitess goyacc v0.2.1
+https://github.com/vitessio/goyacc
+Files: generated parser skeletons. License: licenses/GOYACC.
+
+Go protobuf runtime
+https://github.com/protocolbuffers/protobuf-go
+License: licenses/PROTOBUF. The runtime is a Go module dependency; the
+PostgreSQL message definitions are included as source in this distribution.
+
+XXH3 Go implementation
+https://github.com/zeebo/xxh3
+License: licenses/XXH3. Used for upstream-compatible seeded fingerprints.
+
+Dependency copyright notices must also be preserved when redistributing vendored
+or otherwise bundled dependency source or binaries.
